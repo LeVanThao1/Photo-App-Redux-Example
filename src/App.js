@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Router, Switch, Link, Redirect, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Redirect, Route, BrowserRouter } from 'react-router-dom';
 import NotFound from './components/NotFound/NotFound';
 import Header from './components/Header/Header';
 

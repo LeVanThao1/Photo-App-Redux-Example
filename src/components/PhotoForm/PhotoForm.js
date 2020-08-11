@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormGroup, Label, Input, Col, FormText, Button, Spinner } from 'reactstrap';
-import Select from 'react-select'
+import { FormGroup, Button, Spinner } from 'reactstrap';
+// import Select from 'react-select'
 import { PHOTO_CATEGORY_OPTIONS } from 'constants/global';
-import Images from 'constants/images';
+// import Images from 'constants/images';
 import { Formik, Form, FastField } from 'formik';
 import InputField from 'custom-field/InputField/InputField';
 import SelectField from 'custom-field/SelectField/SelectField';
@@ -18,12 +18,7 @@ PhotoForm.defaultProps = {
     onSubmit: null,
 };
 function PhotoForm(props) {
-
-    const initialValues = {
-        title: '',
-        categoryId: null,
-        photo: ''
-    }
+    const { initialValues, isAddMode } = props;
 
     const validationSchema = Yup.object().shape({
         title: Yup.string().required('This field is required.'),
@@ -66,15 +61,15 @@ function PhotoForm(props) {
                             options={PHOTO_CATEGORY_OPTIONS}
                         />
                            
-                           <FastField
-                                name="photo"
-                                component={RandomPhotoField}
-                                label="Photo"
-                            />
+                        <FastField
+                            name="photo"
+                            component={RandomPhotoField}
+                            label="Photo"
+                        />
                         <FormGroup >
                             <Button type="submit" color="primary">
                                 {isSubmitting && <Spinner size="sm"/>}
-                                Add to album
+                                {isAddMode? "Add to album" : "Update to album"}
                             </Button>
                         </FormGroup>
                     </Form>
