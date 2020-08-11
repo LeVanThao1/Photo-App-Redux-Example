@@ -29,7 +29,7 @@ function MainPage(props) {
 
     return (
         <div className="photo-main">
-            <Banner title="Home Page" backgroundUrl="https://pbs.twimg.com/profile_images/684200142245904384/a124QTD5_400x400.jpg"></Banner>
+            <Banner title="🎉 Your awesome photos 🎉" backgroundUrl="https://pbs.twimg.com/profile_images/684200142245904384/a124QTD5_400x400.jpg"></Banner>
             <Container className="text-center">
                 <div className="py-3">
                     <Link to="/photos/add">Add new photo</Link>

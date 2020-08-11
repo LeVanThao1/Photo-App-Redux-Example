@@ -48,7 +48,7 @@ function PhotoForm(props) {
                             name="title"
                             component={InputField}
 
-                            label="Email"
+                            label="Title"
                             placeholder="Eg: Wow nature"
                         />
 
